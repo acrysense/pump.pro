@@ -1,0 +1,178 @@
+.header {
+    position: relative;
+    z-index: 1;
+
+    @media screen and (max-width: 1023px) {
+        z-index: 1000;
+        min-height: 102.2px;
+        &--active {
+            .header {
+                &__wrapper {
+                    position: fixed;
+                    padding: 16px 20px;
+                }
+                &__overlay {
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 22px 0;
+
+        @media screen and (max-width: 1023px) {
+            top: 0;
+            right: 0;
+            left: 0;
+            //width: 100%;
+            padding: 16px 0;
+            background: linear-gradient(180deg, #1F2328 -20.42%, #1F2227 100%);
+        }
+    }
+    &__overlay {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        @media screen and (max-width: 1023px) {
+            position: fixed;
+            top: var(--headerh);
+            right: 0;
+            left: 0;
+            transform: translateX(104%);
+            z-index: 1;
+            flex-wrap: wrap;
+            padding: 16px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            width: 100%;
+            height: calc((var(--vh, 1vh) * 100) - var(--headerh));
+            background: linear-gradient(180deg, #1F2328 -20.42%, #1F2227 100%);
+            border-top: 1px solid #000;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+    &__nav {
+        margin: 0 auto;
+    }
+    &__group {
+        display: flex;
+        align-items: center;
+
+        @media screen and (max-width: 1023px) {
+            justify-content: center;
+            width: 100%;
+        }
+    }
+    &__language {
+        margin-left: 16px;
+    }
+}
+
+.logotype {
+    max-width: 192px;
+    width: 100%;
+
+    @media screen and (min-width: 1024px) and (max-width: 1199px) {
+        max-width: 153px;
+    }
+    @media screen and (max-width: 1023px) {
+        max-width: 150px;
+    }
+}
+
+.nav {
+    &__list {
+        display: flex;
+        align-items: center;
+
+        @media screen and (max-width: 1023px) {
+            flex-wrap: wrap;
+        }
+    }
+    &__item {
+        @media screen and (max-width: 1023px) {
+            width: 100%;
+            border-bottom: 1px solid #2B2F34;
+        }
+    }
+    &__item + &__item {
+        margin-left: 32px;
+
+        @media screen and (max-width: 1023px) {
+            margin-left: 0;
+        }
+    }
+    &__link {
+        @media screen and (max-width: 1023px) {
+            padding: 24px 0;
+            font-size: 23px;
+        }
+    }
+}
+
+.hamburger {
+    display: inline-block;
+    position: relative;
+    z-index: 101;
+    margin: 0;
+    padding: 0;
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+    font-size: 0;
+    text-align: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    &:focus {
+        outline: none;
+    }
+    &--active {
+        .hamburger {
+            &__inner {
+                &:first-child {
+                    top: 15px;
+                    transform: rotate(45deg);
+                }
+                &:nth-child(2n) {
+                    opacity: 0;
+                }
+                &:last-child {
+                    top: 15px;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        display: none;
+    }
+
+    &__inner {
+        display: block;
+        position: absolute;
+        left: 6px;
+        width: 18px;
+        height: 2px;
+        background: $primary-color;
+        border-radius: 6px;
+        transition: all 0.5s ease-in-out;
+        &:first-child {
+            top: 8px;
+        }
+        &:nth-child(2) {
+            top: 15px;
+        }
+        &:last-child {
+            top: 22px;
+        }
+    }
+}

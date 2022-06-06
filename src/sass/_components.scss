@@ -1,0 +1,319 @@
+// accordeon
+.c-accordeon {
+    margin: 46px auto 0;
+    max-width: 1040px;
+    width: 100%;
+
+    @media screen and (max-width: 767px) {
+        margin: 24px auto 0;
+    }
+
+    &__item {
+        overflow: hidden;
+        background: #25292D;
+        border: 1px solid #313B43;
+        border-radius: 20px;
+        transition: all 0.3s ease-in-out;
+        &.is--open {
+            background: rgba(42, 46, 52, 0.7);
+            border: 1px solid transparent;
+            .c-accordeon {
+                &__trigger {
+                    &::before {
+                        background: transparent;
+                        transition: all 0.3s ease-in-out 0.15s;
+                    }
+                    &::after {
+                        background: #FFA800;
+                        transform: translateY(-50%) rotate(90deg);
+                    }
+                }
+            }
+        }
+    }
+    &__item + &__item {
+        margin-top: 16px;
+    }
+    &__trigger {
+        position: relative;
+        display: block;
+        padding: 24px 52px 24px 24px;
+        width: 100%;
+        font-size: 20px;
+        font-weight: normal;
+        text-align: left;
+        color: $primary-color;
+        background: transparent;
+        border: none;
+        border-radius: 20px 20px 0 0;
+        cursor: pointer;
+        &:focus {
+            outline: none;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 24px;
+            transform: translateY(-50%);
+            display: block;
+            width: 16px;
+            height: 2px;
+            background: rgba($primary-color, 0.6);
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 31px;
+            transform: translateY(-50%);
+            display: block;
+            width: 2px;
+            height: 16px;
+            background: rgba($primary-color, 0.6);
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        @media screen and (max-width: 767px) {
+            padding: 18.5px 48px 18.5px 16px;
+            font-size: 15px;
+        }
+    }
+    &__wrapper {
+        display: none;
+        border-radius: 0 0 20px 20px;
+    }
+    &__content {
+        padding: 0 24px 24px;
+        color: rgba($primary-color, 0.7);
+        p {
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 1.5;
+        }
+
+        @media screen and (max-width: 767px) {
+            padding: 0 16px 16px;
+            p {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+// contacts
+.c-contacts {
+    display: flex;
+    align-items: center;
+        
+    @media screen and (max-width: 767px) {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    &__img {
+        display: block;
+        margin-right: 32px;
+        width: 100px;
+        height: 100px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        
+        @media screen and (max-width: 767px) {
+            margin-right: 0;
+            margin-bottom: 16px;
+            width: 64px;
+            height: 64px;
+        }
+    }
+    &__body {
+        @media screen and (max-width: 767px) {
+            width: 100%;
+        }
+    }
+    &__group {
+        @media screen and (min-width: 768px) {
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__group + &__group {
+        margin-top: 16px;
+    }
+    &__title {
+        display: block;
+        margin-right: 16px;
+        font-size: 16px;
+        font-weight: normal;
+        color: rgba($primary-color, 0.8);
+
+        @media screen and (max-width: 767px) {
+            margin-right: 0;
+            margin-bottom: 8px;
+        }
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+        padding: 12px 27px;
+        width: fit-content;
+        font-size: 18px;
+        font-weight: normal;
+        background: rgba($primary-color, 0.07);
+        border-radius: 100px;
+        &:hover {
+            .c-contacts {
+                &__icon {
+                    color: $orange-color;
+                }
+            }
+        }
+    }
+    &__icon {
+        display: block;
+        margin-top: 3px;
+        margin-left: 14px;
+        width: 6px;
+        height: 10px;
+        color: $primary-color;
+    }
+}
+
+// language
+.c-language {
+    position: relative;
+
+    @media screen and (hover: hover) {
+        &:hover {
+            .c-language__btn {
+                color: $primary-color;
+                border: 1px solid #FFA800;
+                &::after {
+                    transform: rotate(180deg);
+                }
+            }
+            .c-language__dropdown {
+                display: block;
+            }
+        }
+    }
+    @media screen and (hover: none) {
+        &--active {
+            .c-language__btn {
+                color: $primary-color;
+                border: 1px solid #FFA800;
+                &::after {
+                    transform: rotate(180deg);
+                }
+            }
+            .c-language__dropdown {
+                display: block;
+            }
+        }
+    }
+    
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 9px 8px 9px 16px;
+        font-size: 14px;
+        font-weight: normal;
+        text-align: center;
+        line-height: 1.15;
+        color: $primary-color;
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        transition: none;
+        &::after {
+            content: '';
+            display: block;
+            margin-left: 3px;
+            width: 24px;
+            height: 24px;
+            background-image: url(../img/dist/sprite.svg#icon-caret);
+            background-repeat: no-repeat;
+            background-size: 10px;
+            background-position: center center;
+        }
+        &:focus {
+            outline: none;
+        }
+
+        @media screen and (max-width: 767px) {
+            font-size: 15px;
+        }
+    }
+    &__dropdown {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+        display: none;
+        padding-top: 6px;
+        transform: translateY(100%);
+        min-width: 100%;
+        &--top {
+            top: 0;
+            bottom: auto;
+            transform: translateY(-100%);
+            padding-top: 0;
+            padding-bottom: 6px;
+        }
+
+        @media screen and (hover: hover) {
+            &:hover {
+                display: block;
+            }
+        }
+        @media screen and (max-width: 1023px) {
+            top: 0;
+            bottom: auto;
+            transform: translateY(-100%);
+            padding-top: 0;
+            padding-bottom: 6px;
+        }
+        @media screen and (max-width: 349px) {
+            min-width: 300px;
+        }
+    }
+    &__wrapper {
+        padding: 6px 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 108px;
+        background: #272B30;
+        border: 1px solid #36393F;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    &__elem {
+        display: flex;
+        align-items: center;
+        padding: 4px 15px;
+        width: 100%;
+        font-size: 14px;
+        font-weight: normal;
+        text-align: left;
+        line-height: 1.7;
+        opacity: 0.6;
+        color: $primary-color;
+        background: transparent;
+        border: none;
+        &:focus {
+            outline: none;
+        }
+        &:hover {
+            opacity: 1;
+            -webkit-text-stroke: 0.4px;
+            color: $primary-color;
+            background: rgba(255, 191, 26, 0.12);
+        }
+    }
+}
