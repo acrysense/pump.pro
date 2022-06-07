@@ -42,7 +42,7 @@
         width: 100%;
         font-size: 16px;
         font-weight: normal;
-        border: 1px solid #36393F;
+        border: 0.5px solid #434859;
         background: rgba($primary-color, 0.03);
         border-radius: 20px;
     }
@@ -147,7 +147,8 @@
         font-size: 16px;
         font-weight: 600;
         text-align: center;
-        background: #272A30;
+        background: #272B39;
+        border: 0.5px solid #434859;
         border-radius: 20px;
 
         @media screen and (min-width: 768px) {
@@ -211,7 +212,8 @@
         overflow: hidden;
         padding: 82px;
         min-height: 610px;
-        background: #272A30;
+        background: #272B39;
+        border: 0.5px solid #434859;
         border-radius: 20px;
 
         @media screen and (min-width: 1024px) and (max-width: 1199px) {
@@ -385,7 +387,8 @@
         padding: 26px 24px;
         max-width: 561px;
         width: 100%;
-        background: linear-gradient(88.71deg, #262B31 1.1%, #262B31 101.4%);
+        background: #272B39;
+        border: 0.5px solid #434859;
         border-radius: 20px;
 
         @media screen and (max-width: 1023px) {

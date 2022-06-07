@@ -10,12 +10,12 @@
 
     &__item {
         overflow: hidden;
-        background: #25292D;
+        background: #272B39;
         border: 1px solid #313B43;
         border-radius: 20px;
         transition: all 0.3s ease-in-out;
         &.is--open {
-            background: rgba(42, 46, 52, 0.7);
+            background: rgba(#2A2E34, 0.7);
             border: 1px solid transparent;
             .c-accordeon {
                 &__trigger {
