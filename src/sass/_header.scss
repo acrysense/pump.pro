@@ -28,9 +28,8 @@
             top: 0;
             right: 0;
             left: 0;
-            //width: 100%;
             padding: 16px 0;
-            background: linear-gradient(180deg, #1F2328 -20.42%, #1F2227 100%);
+            background: #1E232E;
         }
     }
     &__overlay {
@@ -52,9 +51,9 @@
             overflow-y: auto;
             width: 100%;
             height: calc((var(--vh, 1vh) * 100) - var(--headerh));
-            background: linear-gradient(180deg, #1F2328 -20.42%, #1F2227 100%);
+            background: #1E232E;
             border-top: 1px solid #000;
-            transition: all 0.3s ease-in-out;
+            transition: all 0.25s ease;
         }
     }
     &__nav {
